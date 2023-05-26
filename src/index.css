@@ -81,8 +81,9 @@
 }
 
 .todo-box .content p{
-  text-align: center;
+  text-align: center ;
   margin-left: 10px;
+  margin-bottom: 5px;
 }
 
 .todo-box span{
