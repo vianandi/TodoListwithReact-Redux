@@ -1,0 +1,172 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --_hue: 245;
+  --_size: 1.5rem;
+  --_radius: 0.2em;
+  --_tspeed_fast: 180ms;
+  --_tspeed_slow: 300ms;
+  --_ttype_squish: cubic-bezier(0.86, -0.1, 0.27, 1.15);
+
+  /* Light Mode */
+  --bg1: black;
+  --bg--light: var(--_hue) 30% 94%; /*#5691A1*/
+  --txt--light: var(--_hue) 40% 5%; /*#3e3f44*/
+  --accent--light: var(--_hue) 55% 50%; /*#7396A0*/
+  --accent1--light: 10 80% 60%; /*#19CCCC*/
+  --muted--light: var(--_hue) 30% 99%; /*#79c2c4*/
+
+}
+
+@media screen and (max-width: 768px) {
+  :root {
+    --_size: 1.3rem;
+  }
+}
+
+/* prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --_tspeed_slow: 50ms;
+    --_tspeed_fast: 50ms;
+  }
+}
+
+.wrapper{
+  max-width: 1440px;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.custom-form{
+  width: 400px;
+  height: auto;
+  margin: 20px auto;
+}
+
+.form-control{
+  border: 1px solid rgb(23, 93, 93) !important;
+  border-radius: 5px !important;
+}
+
+.input-and-btn{
+  display: flex;
+}
+
+.todo-box{
+  width: 400px;
+  margin: 0 auto;
+  height: 40px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px solid rgb(23, 93, 93);
+  border-radius: 5px;
+}
+
+.todo-box .content{
+  display: flex;
+  align-items: center;
+}
+
+.todo-box .content p{
+  text-align: center;
+  margin-left: 10px;
+}
+
+.todo-box span{
+  margin: 0 5px;
+}
+
+.actions-box{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.back-btn{
+  margin-top: 5px;
+  width: 100%;
+}
+
+.btn {
+  max-width: fit-content;
+  display: flex;
+  place-items: center;
+  margin-left: 10px;
+  background-color: rgb(0, 255, 255) !important;
+  color: black !important;
+  text-decoration: none;
+  padding: 0.5em;
+}
+
+.btn :where(svg, img, span) {
+  pointer-events: none;
+}
+
+.btn :where(svg, img) {
+  width: var(--_size);
+  height: var(--_size);
+}
+
+.btn:where(:active, :hover) {
+  background-color: rgb(26, 90, 90) !important;
+  color: rgb(0, 255, 255) !important;
+  /* background-color: hsl(var(--accent) / 0.7); */
+  box-shadow: 0 0 0 hsl(var(--accent) / 0.3), 0 0 0 -0.1em hsl(var(--bg)),
+    0 0 0 -0.2em hsl(var(--accent));
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:focus-visible {
+  box-shadow: 0 0 0 hsl(var(--accent) / 0.3), 0 0 0 0.2em hsl(var(--bg)),
+    0 0 0 0.4em hsl(var(--accent) / 0.7);
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.filter-buttons button {
+  margin: 5px;
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: none;
+  background-color: grey;
+  color: white;
+  cursor: pointer;
+}
+
+.filter-buttons button:last-child {
+  margin-right: 0;
+}
+
+.filter-buttons button:hover {
+  background-color: rgb(26, 90, 90);
+  color: aqua;
+}
+
+.filter-buttons button:active{
+  color: aqua;
+}
+
+.filter-button-active {
+  background-color: rgb(26, 90, 90);
+  color: aqua;
+}
+
