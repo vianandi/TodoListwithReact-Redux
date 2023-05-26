@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import { Form } from "./components/Form";
 import {useDispatch, useSelector} from 'react-redux';
-import { Todo } from './components/todo';
+import { Todo } from './components/Todo';
 
 
 function App() {
